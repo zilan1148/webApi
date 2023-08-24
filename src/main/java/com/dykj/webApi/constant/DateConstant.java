@@ -5,7 +5,7 @@ package com.dykj.webApi.constant;
  * @date:2023/8/22
  * @Description:
  */
-public interface DateContant {
+public interface DateConstant {
     /**
      * 星期一
      */

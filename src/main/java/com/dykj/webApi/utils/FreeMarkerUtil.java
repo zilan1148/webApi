@@ -4,6 +4,7 @@ package com.dykj.webApi.utils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -21,16 +22,21 @@ public class FreeMarkerUtil {
 
 
     private static Configuration config;
-    private static String serverPath;
 
-    @Value("${spring.servlet.multipart.location:D:\\idea_codes\\webApi\\src\\main\\resources\\static}")
-    public void setServerPath(String serverPath) {
-        FreeMarkerUtil.serverPath = serverPath;
-    }
+    /**
+     * 模板路径
+     */
+    @Value(value = "${freemarkerPath.templatePath}")
+    private static String templatePath;
+
+    /**
+     * 静态页路径
+     */
+    @Value(value = "${freemarkerPath.staticHtmlPath}")
+    private static String staticHtmlPath;
 
     /**
      * 通过freemarker生成静态HTML页面
-     *
      * @param templateName   模版名称
      * @param targetFileName 生成后的文件名
      * @param ftlPath        模板路径
@@ -44,11 +50,11 @@ public class FreeMarkerUtil {
             //指定默认编码格式
             config.setDefaultEncoding("UTF-8");
             //设置模版文件的路径
-            config.setDirectoryForTemplateLoading(new File(serverPath + ftlPath));
+            config.setDirectoryForTemplateLoading(new File(templatePath + ftlPath));
             //获得模版包
             Template template = config.getTemplate(templateName);
             //从参数文件中获取指定输出路径
-            String path = serverPath + htmlPath;
+            String path = staticHtmlPath + htmlPath;
             //生成的静态页存放路径如果不存在就创建
             File file = null;
             file = new File(path);

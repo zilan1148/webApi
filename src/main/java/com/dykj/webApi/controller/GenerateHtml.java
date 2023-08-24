@@ -6,7 +6,6 @@ import com.dykj.webApi.utils.FreeMarkerUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.Map;
  * @Description:
  */
 @RestController
-@RequestMapping("/testgenerateHtml")
+@RequestMapping("/testGenerateHtml")
 public class GenerateHtml {
 
     @GetMapping("/test")
@@ -29,7 +28,7 @@ public class GenerateHtml {
         list.add(new GenerateHtmlPojo("举头望明月，", "低头思故乡。"));
         map.put("author","李白");
         map.put("test",list);
-        FreeMarkerUtil.createHtml("test.ftl","test.html","\\ftl","\\html",map);
+        FreeMarkerUtil.createHtml("test.ftl","test.html","\\dykj","\\dy",map);
         return Result.success(map);
     }
 }

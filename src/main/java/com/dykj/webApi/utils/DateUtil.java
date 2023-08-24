@@ -2,13 +2,12 @@ package com.dykj.webApi.utils;
 
 
 
-import com.dykj.webApi.constant.DateContant;
+
+import com.dykj.webApi.constant.DateConstant;
 import org.joda.time.DateTime;
-import org.springframework.util.StringUtils;
 
 import java.beans.PropertyEditorSupport;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -105,25 +104,25 @@ public class DateUtil extends PropertyEditorSupport{
 
         String dayOfWeek = "";
         
-        if (weekInt == DateContant.MONDAY){
+        if (weekInt == DateConstant.MONDAY){
             dayOfWeek = "MON";
         }
-        if (weekInt == DateContant.TUESDAY){
+        if (weekInt == DateConstant.TUESDAY){
             dayOfWeek = "TUE";
         }
-        if (weekInt == DateContant.WEDNESDAY){
+        if (weekInt == DateConstant.WEDNESDAY){
             dayOfWeek = "WED";
         }
-        if (weekInt == DateContant.THURSDAY){
+        if (weekInt == DateConstant.THURSDAY){
             dayOfWeek = "THU";
         }
-        if (weekInt == DateContant.FRIDAY){
+        if (weekInt == DateConstant.FRIDAY){
             dayOfWeek = "FRI";
         }
-        if (weekInt == DateContant.SATURDAY){
+        if (weekInt == DateConstant.SATURDAY){
             dayOfWeek = "SAT";
         }
-        if (weekInt == DateContant.SUNDAY){
+        if (weekInt == DateConstant.SUNDAY){
             dayOfWeek = "SUN";
         }
         return dayOfWeek;
@@ -139,25 +138,25 @@ public class DateUtil extends PropertyEditorSupport{
 
         String dayOfWeek = "";
 
-        if (weekInt == DateContant.MONDAY){
+        if (weekInt == DateConstant.MONDAY){
             dayOfWeek = "星期一";
         }
-        if (weekInt == DateContant.TUESDAY){
+        if (weekInt == DateConstant.TUESDAY){
             dayOfWeek = "星期二";
         }
-        if (weekInt == DateContant.WEDNESDAY){
+        if (weekInt == DateConstant.WEDNESDAY){
             dayOfWeek = "星期三";
         }
-        if (weekInt == DateContant.THURSDAY){
+        if (weekInt == DateConstant.THURSDAY){
             dayOfWeek = "星期四";
         }
-        if (weekInt == DateContant.FRIDAY){
+        if (weekInt == DateConstant.FRIDAY){
             dayOfWeek = "星期五";
         }
-        if (weekInt == DateContant.SATURDAY){
+        if (weekInt == DateConstant.SATURDAY){
             dayOfWeek = "星期六";
         }
-        if (weekInt == DateContant.SUNDAY){
+        if (weekInt == DateConstant.SUNDAY){
             dayOfWeek = "星期日";
         }
         return dayOfWeek;
