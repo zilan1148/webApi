@@ -1,0 +1,57 @@
+server:
+  port: 8899
+mybatis:
+  configuration:
+    #开启驼峰 aB 自动映射到 a_b
+    map-underscore-to-camel-case: true
+    #mybatis 日志打印
+    ##logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  #数据库方言版本
+  helper-dialect: mysql
+  #分页参数合理化，启用后：如果pageNum < 1会查询第一页，如果pageNum > maxPages 会查询最后一页
+  reasonable: true
+  #如果 pageSize = 0 就会查询出全部的结果（相当于没有执行分页查询）
+  pageSizeZero: true
+freemarkerPath:
+  templatePath: D:/path/template
+  staticHtmlPath: D:/path/html
+spring:
+  freemarker:
+    #设置模板编码
+    charset: UTF-8
+    #设置模板后缀名
+    suffix: .ftl
+    check-template-location: false
+
+  redis:
+    host: 10.10.3.19
+    port: 6379
+    password:
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cms_web_api?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #最大值
+      max-active: 50
+      #初始化大小
+      initial-size: 20
+      #最小值
+      min-idle: 10
+      #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+      max-wait: 60000
+      #申请链接时检测，如果有空闲时间有剩余，则检测链接是否有效
+      test-while-idle: true
+      #监测链接是否有效
+      validationQuery: SELECT 1 FROM DUAL
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间
+      minEvictableIdleTimeMillis: 600000
+
+
+

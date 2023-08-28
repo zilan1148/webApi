@@ -66,19 +66,4 @@ public class Result {
         return Result.builder().code(resultEnum.getCode()).message(resultEnum.getMessage()).build();
     }
 
-    public static Result error(CustomException e) {
-        return Result.builder().code(e.getErrorCode()).message(e.getErrorMsg()).build();
-    }
-
-    public static Result infor(Integer inforCode, String inforMsg) {
-        return Result.builder().code(inforCode).message(inforMsg).build();
-    }
-
-    public static Result success(Integer inforCode, String inforMsg) {
-        return Result.builder().code(inforCode).message(inforMsg).build();
-    }
-
-    public static Result infor(ResultEnum resultEnum) {
-        return Result.builder().code(resultEnum.getCode()).message(resultEnum.getMessage()).build();
-    }
 }

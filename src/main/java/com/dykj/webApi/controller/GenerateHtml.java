@@ -1,14 +1,14 @@
 package com.dykj.webApi.controller;
 
 import com.dykj.webApi.bean.Result;
-import com.dykj.webApi.pojo.GenerateHtmlPojo;
+import com.dykj.webApi.directive.CmsContentListDirective;
 import com.dykj.webApi.utils.FreeMarkerUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,15 +20,22 @@ import java.util.Map;
 @RequestMapping("/testGenerateHtml")
 public class GenerateHtml {
 
+    /**
+     * 模板路径
+     */
+    @Value(value = "${freemarkerPath.templatePath}")
+    private String templatePath;
+    /**
+     * 静态页路径
+     */
+    @Value(value = "${freemarkerPath.staticHtmlPath}")
+    private String staticHtmlPath;
+
     @GetMapping("/test")
     public Result test() {
         Map<String,Object> map = new HashMap<>(16);
-        List<GenerateHtmlPojo> list = new ArrayList<>();
-        list.add(new GenerateHtmlPojo("床前明月光，", "疑是地上霜。"));
-        list.add(new GenerateHtmlPojo("举头望明月，", "低头思故乡。"));
-        map.put("author","李白");
-        map.put("test",list);
-        FreeMarkerUtil.createHtml("test.ftl","test.html","\\dykj","\\dy",map);
+        map.put("repeat",new CmsContentListDirective());
+        FreeMarkerUtil.createHtml("test2.ftl","test2.html",templatePath +"\\dykj",staticHtmlPath+"\\dy",map);
         return Result.success(map);
     }
 }
