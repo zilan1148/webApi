@@ -15,4 +15,18 @@ public interface JcUserService {
      */
     int saveUser(JcUser jcUser);
 
+    /**
+     * 根据ID获取用户
+     * @param userId
+     * @return JcUser
+     */
+    JcUser findOneByUserId(String userId);
+
+    /**
+     * 根据ID获取用户
+     * @param username
+     * @return JcUser
+     */
+    JcUser findOneByUsername(String username);
+
 }

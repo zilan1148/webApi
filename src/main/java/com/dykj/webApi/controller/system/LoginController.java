@@ -12,7 +12,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/login")
 public class LoginController {
 
-    public static void main(String[] args) {
 
-    }
 }

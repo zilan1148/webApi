@@ -3,6 +3,7 @@ package com.dykj.webApi.controller;
 import com.dykj.webApi.bean.Result;
 import com.dykj.webApi.directive.CmsContentListDirective;
 import com.dykj.webApi.utils.FreeMarkerUtil;
+import org.apache.commons.collections4.Get;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,4 +39,10 @@ public class GenerateHtml {
         FreeMarkerUtil.createHtml("test2.ftl","test2.html",templatePath +"\\dykj",staticHtmlPath+"\\dy",map);
         return Result.success(map);
     }
+
+    @GetMapping("/hello")
+    public Result hello(){
+        return Result.success("hello");
+    }
 }
+ 

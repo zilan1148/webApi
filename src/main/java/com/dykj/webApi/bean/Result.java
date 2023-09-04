@@ -8,10 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * Author: 张景川
- * Date: 2021/5/10 10:59
- * FileName: Result
- * Description: 返回结果参数封装
+ * @Author: 张景川
+ * @Date: 2021/5/10 10:59
+ * @FileName: Result
+ * @Description: 返回结果参数封装
  */
 @Data
 @Builder
